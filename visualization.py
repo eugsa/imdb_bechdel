@@ -2,15 +2,10 @@ import matplotlib.pyplot as plt
 from utils import *
 from transform import *
 
-def get_filepath(filename, path):
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    filepath = os.path.join(script_dir, path + filename)
-    return filepath
-
 def saving_figure(plt, filename):
-    filepath = get_filepath(filename, FIGURES_PATH)
+    filepath = get_filepath(filename, FIGURES_PATH, '.png')
     plt.savefig(filepath)
-    print(f"See saved figure as { filepath }.png")
+    print(f"See saved figure as { filepath }")
     plt.close()
 
 def generate_passing_per_year_plot(spark):

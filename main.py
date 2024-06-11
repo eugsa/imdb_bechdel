@@ -1,9 +1,7 @@
 from pyspark.sql import SparkSession
 import visualization
 import reporting
-
-filename = 'Bechdel_IMDB_Merge.csv'
-dataset_path = '../data/'
+from config import *
 
 def init():
   spark = SparkSession.builder \
@@ -11,7 +9,7 @@ def init():
       .appName("imdb_bechdel_app") \
       .getOrCreate()
 
-  df = spark.read.csv(path=dataset_path+filename,  inferSchema=True, header=True)
+  df = spark.read.csv(path=DATASET_PATH+DATASET_FILENAME,  inferSchema=True, header=True)
   df.createOrReplaceTempView("imdb_bechdel")
   return spark, df
 
