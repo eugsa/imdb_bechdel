@@ -1,6 +1,6 @@
 from pyspark.sql import SparkSession
-from transform import *
 import visualization
+import reporting
 
 filename = 'Bechdel_IMDB_Merge.csv'
 dataset_path = '../data/'
@@ -18,3 +18,7 @@ def init():
 def generate_passing_per_year_plot():
   spark, df = init()
   visualization.generate_passing_per_year_plot(spark)
+
+def generate_passing_per_year_report():
+  spark, df = init()
+  reporting.generate_passing_per_year_report(spark)
