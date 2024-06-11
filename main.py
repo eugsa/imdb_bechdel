@@ -15,7 +15,8 @@ def init():
   df.createOrReplaceTempView("imdb_bechdel")
   return spark, df
 
-def generate_passing_per_year_plot(spark):
+def generate_passing_per_year_plot():
+  spark, df = init()
   visualization.generate_passing_per_year_plot(spark)
   # passing_per_year_df = get_passing_per_year_df(spark).toPandas()
   # plt.bar(passing_per_year_df.year, passing_per_year_df.movieCount)
@@ -24,6 +25,6 @@ def generate_passing_per_year_plot(spark):
   # plt.ylabel('Movie count')
   # plt.show()
 
-spark, df = init()
 
-generate_passing_per_year_plot(spark)
+
+# generate_passing_per_year_plot(spark)

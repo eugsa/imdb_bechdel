@@ -1,3 +1,4 @@
 .zshrc
 .DS_Store
 __pycache__/*
+figures/*.png
