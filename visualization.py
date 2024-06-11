@@ -1,17 +1,15 @@
 import matplotlib.pyplot as plt
-import inspect
-import os
+from utils import *
 from transform import *
 
-FIGURES_PATH = './figures/'
 
-def get_filepath(filename):
+def get_filepath(filename, path):
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    filepath = os.path.join(script_dir, FIGURES_PATH + filename)
+    filepath = os.path.join(script_dir, path + filename)
     return filepath
 
 def saving_figure(plt, filename):
-    filepath = get_filepath(filename)
+    filepath = get_filepath(filename, FIGURES_PATH)
     plt.savefig(filepath)
     print(f"See saved figure as { filepath }.png")
     plt.close()
