@@ -22,3 +22,7 @@ def generate_passing_per_year_plot():
 def generate_passing_per_year_report():
   spark, df = init()
   reporting.generate_passing_per_year_report(spark)
+
+def generate_grading_distribution_per_year_report():
+  spark, df = init()
+  reporting.generate_grading_distribution_per_year_report(spark)

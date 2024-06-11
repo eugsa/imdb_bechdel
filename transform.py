@@ -1,13 +1,3 @@
-def get_top_10_most_recent_passing_df(spark):
-  query = """
-    SELECT title, year, bechdelRating
-    FROM imdb_bechdel
-    ORDER BY bechdelRating DESC, year DESC
-    LIMIT 10
-  """
-  top_10_most_recent_passing_df = spark.sql(query)
-  top_10_most_recent_passing_df.show()
-
 def get_passing_per_year_df(spark):
   query = """
     SELECT year, bechdelRating, COUNT(title) as movieCount
@@ -18,3 +8,13 @@ def get_passing_per_year_df(spark):
   """
   passing_per_year_df = spark.sql(query)
   return passing_per_year_df
+
+def get_grading_distribution_per_year_df(spark):
+  query = """
+    SELECT year, bechdelRating, COUNT(title) as movieCount
+    FROM imdb_bechdel
+    GROUP BY bechdelRating, year
+    ORDER BY year DESC, bechdelRating ASC
+  """
+  grading_distribution_per_year_df = spark.sql(query)
+  return grading_distribution_per_year_df
