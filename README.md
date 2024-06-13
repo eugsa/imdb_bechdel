@@ -7,10 +7,10 @@ Example usage:
 `make generate_grading_distribution_per_genre_plot`
 
 ## Dataset
-[https://www.kaggle.com/datasets/nliabzd/movies-imdb-and-bechdel-information/data](Source on Kaggle)
+[Source on Kaggle](https://www.kaggle.com/datasets/nliabzd/movies-imdb-and-bechdel-information/data)
 
 
 ## What is Bechdel and the Bechdel rating?
-[https://en.wikipedia.org/wiki/Bechdel_test](See on Wikipedia)
+[See on Wikipedia](https://en.wikipedia.org/wiki/Bechdel_test)
 
 
