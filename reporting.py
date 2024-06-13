@@ -15,14 +15,14 @@ def generate_grading_distribution_per_year_report(spark):
   df.to_csv(filepath)
   print(f"See saved report as { filepath }")
 
-def generate_distribution_per_genre(spark, df):
+def generate_distribution_per_genre_report(spark, df):
   function_name = inspect.stack()[0][3]
   filepath = get_filepath(function_name, REPORTS_PATH, '.csv')
   df = get_distribution_per_genre_df(spark, df).toPandas()
   df.to_csv(filepath)
   print(f"See saved report as { filepath }")
 
-def generate_grading_distribution_per_genre(spark, df):
+def generate_grading_distribution_per_genre_report(spark, df):
   function_name = inspect.stack()[0][3]
   filepath = get_filepath(function_name, REPORTS_PATH, '.csv')
   df = get_grading_distribution_per_genre_df(spark, df).toPandas()

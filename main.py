@@ -25,10 +25,10 @@ def generate_grading_distribution_per_year_report():
   spark, df = init()
   reporting.generate_grading_distribution_per_year_report(spark)
 
-def generate_distribution_per_genre():
+def generate_distribution_per_genre_report():
   spark, df = init()
-  reporting.generate_distribution_per_genre(spark, df)
+  reporting.generate_distribution_per_genre_report(spark, df)
 
-def generate_grading_distribution_per_genre():
+def generate_grading_distribution_per_genre_report():
   spark, df = init()
-  reporting.generate_grading_distribution_per_genre(spark, df)
+  reporting.generate_grading_distribution_per_genre_report(spark, df)

@@ -44,8 +44,8 @@ def get_distribution_per_genre_df(spark, df):
     GROUP BY g.genre
     ORDER BY g.genre, COUNT(m.title)
   """
-  df = spark.sql(query)
-  return df
+  distribution_per_genre_df = spark.sql(query)
+  return distribution_per_genre_df
   
 def get_grading_distribution_per_genre_df(spark, df):
   genres_df = get_genres_df(df)
@@ -62,4 +62,4 @@ def get_grading_distribution_per_genre_df(spark, df):
     ORDER BY g.genre, m.bechdelRating, COUNT(m.title)
   """
   grading_distribution_per_genre_df = spark.sql(query)
-  return df
+  return grading_distribution_per_genre_df
