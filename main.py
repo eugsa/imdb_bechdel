@@ -18,9 +18,9 @@ def generate_passing_per_year_plot():
   spark, df = init()
   visualization.generate_passing_per_year_plot(spark)
 
-# def generate_distribution_per_genre_plot():
-#   spark, df = init()
-#   visualization.generate_distribution_per_genre_plot(spark, df)
+def generate_distribution_per_genre_plot():
+  spark, df = init()
+  visualization.generate_distribution_per_genre_plot(spark, df)
 
 def generate_grading_distribution_per_genre_plot():
   spark, df = init()
