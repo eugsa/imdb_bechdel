@@ -24,3 +24,7 @@ def generate_passing_per_year_report():
 def generate_grading_distribution_per_year_report():
   spark, df = init()
   reporting.generate_grading_distribution_per_year_report(spark)
+
+def generate_grading_distribution_per_genre():
+  spark, df = init()
+  reporting.generate_grading_distribution_per_genre(spark, df)
