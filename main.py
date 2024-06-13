@@ -13,10 +13,20 @@ def init():
   df.createOrReplaceTempView("imdb_bechdel")
   return spark, df
 
+# Plots
 def generate_passing_per_year_plot():
   spark, df = init()
   visualization.generate_passing_per_year_plot(spark)
 
+# def generate_distribution_per_genre_plot():
+#   spark, df = init()
+#   visualization.generate_distribution_per_genre_plot(spark, df)
+
+def generate_grading_distribution_per_genre_plot():
+  spark, df = init()
+  visualization.generate_grading_distribution_per_genre_plot(spark, df)
+
+# Reports
 def generate_passing_per_year_report():
   spark, df = init()
   reporting.generate_passing_per_year_report(spark)
@@ -32,3 +42,7 @@ def generate_distribution_per_genre_report():
 def generate_grading_distribution_per_genre_report():
   spark, df = init()
   reporting.generate_grading_distribution_per_genre_report(spark, df)
+
+def generate_grading_distribution_per_genre_plot():
+  spark, df = init()
+  visualization.generate_grading_distribution_per_genre_plot(spark, df)

@@ -28,6 +28,7 @@ def get_genres_df(df):
 
   new_df = df_genre1.union(df_genre2).union(df_genre3)
   new_df = new_df.filter(new_df.genre.isNotNull())
+  new_df = new_df.filter(new_df.genre != '\\N')
   return new_df
 
 def get_distribution_per_genre_df(spark, df):
